@@ -1,0 +1,15 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 100%;
+    align-self: center;
+    align-self: auto;
+    height: 100%;
+  }
+  
+  .example-container > * {
+    width: 50%;
+  }

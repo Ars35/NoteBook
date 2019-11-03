@@ -1,0 +1,53 @@
+<div >
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Telefon</th>
+        <th scope="col">Email</th>
+        <th scope="col">Remove  </th>
+        <th scope="col"> Update  </th>
+        <th scope = "col">New</th>
+      </tr>
+      
+     
+      
+    </thead>
+    <tbody *ngIf ="contacts">
+<tr  #line *ngFor = " let c of contacts" >
+<td>{{c.id}}</td>
+<td>{{c.name}}</td>
+<td>{{c.surName}}</td>
+<td>{{c.phone}}</td>
+<td>{{c.email}}</td>
+<td><button class="w3-button w3-teal" (click)="remove(c.id)">Delete</button></td>
+<td><button  class="w3-button w3-teal"(click)="rowClick(c)">Update</button></td>
+<td>  <button class="w3-button w3-medium w3-circle w3-teal" (click)="openCreate()">+</button></td>
+
+
+</tr>
+<tr *ngIf="updating">
+  <td >#</td>
+  <td><input type="text" [(ngModel)]= "contact.name"/></td>
+  <td><input type="text" [(ngModel)]= "contact.surName"/></td>
+  <td><input type="text"[(ngModel)]= "contact.phone"/></td>
+  <td><input type="text"[(ngModel)]= "contact.email"/></td>
+  <td><button class="w3-button w3-teal" (click)="update()">Update</button></td>
+  </tr>
+  <tr *ngIf="creating">
+    <td >#</td>
+    <td><input type="text" [(ngModel)]= "name"/></td>
+    <td><input type="text" [(ngModel)]= "surName"/></td>
+    <td><input type="text"[(ngModel)]= "phone"/></td>
+    <td><input type="text"[(ngModel)]= "email"/></td>
+    <td><button class="w3-button w3-teal" (click)="create()">Edit</button></td>
+    </tr>
+  
+
+    </tbody>
+  </table>
+</div>
+
+

@@ -1,0 +1,15 @@
+<div class="example-container" *ngIf="creating">
+        <mat-form-field>
+          <input matInput placeholder="name" [(ngModel)]="contact.name" >
+        </mat-form-field>
+        <mat-form-field>
+         <input matInput placeholder="surname" [(ngModel)]="contact.surName">
+        </mat-form-field>
+        <mat-form-field>
+         <input matInput placeholder="phone" [(ngModel)]="contact.phone">
+         </mat-form-field>
+         <mat-form-field>
+         <input matInput placeholder="email" [(ngModel)]="contact.email">
+        </mat-form-field>
+       <button mat-raised-button color="primary" (click)="edit()">Edit</button>
+      </div>
